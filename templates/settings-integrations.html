@@ -1,0 +1,38 @@
+    <section class="settings">
+      <div class="container">
+        <div class="row row-header">
+          <div class="col-sm-12">
+            <p>Connect your <strong>external accounts</strong> to unlock powerful automations and tools for your workflows on Janitor.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <img alt="GitHub Logo" class="logo-small" src="/img/github.svg">
+                <div class="list-group-item-details">
+                  <strong><a href="https://github.com">GitHub</a></strong><br>
+                  <small>Import basic information from your GitHub profile</small>
+                </div>
+                <div class="list-group-item-controls">{{if {{github.username}} then {{
+                  <form action="/api/user/credentials/github" class="ajax-form has-feedback is-submit" data-refresh-after-success="true" method="delete">
+                    <button class="btn btn-default" type="submit">Disconnect</button>
+                  </form>}} else {{
+                  <a class="btn btn-default" href={{= github.authorizeUrl in json}}>Connect</a>}}}}
+                </div>
+              </li>
+              <li class="list-group-item">
+                <img alt="BMO Logo" class="logo-small" src="/img/bmo.svg">
+                <div class="list-group-item-details">
+                  <strong><a href="https://bugzilla.mozilla.org">Bugzilla</a></strong><br>
+                  <small>Easily send Firefox patches to code review</small>
+                </div>
+                <div class="list-group-item-controls">
+                  <a class="btn btn-default disabled" disabled="true" href="#"><span class="hidden-xs">Coming </span>Soon&trade;</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>

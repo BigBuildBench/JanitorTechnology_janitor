@@ -1,0 +1,20 @@
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path d="M8 9C5.79 9 4 7.433 4 5.5S5.79 2 8 2s4 1.567 4 3.5S10.21 9 8 9zM6.5 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm3 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" id="a"/>
+    <path d="M8 16A6 6 0 1 0 8 4a6 6 0 0 0 0 12z" id="b"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path d="M3.5 11a.5.5 0 0 0 0-1h-3a.5.5 0 0 0 0 1h3zm12 0a.5.5 0 1 0 0-1h-3a.5.5 0 1 0 0 1h3z" fill="#409444"/>
+    <path d="M4.5 7.5h-3m10 0h3m-3 6h3m-10 0h-3" stroke="#409444" stroke-linecap="round"/>
+    <use fill="#000" xlink:href="#a"/>
+    <path stroke-opacity=".22" stroke="#000" d="M8 8.5c1.947 0 3.5-1.36 3.5-3s-1.553-3-3.5-3-3.5 1.36-3.5 3 1.553 3 3.5 3zm-1.5-4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm3 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+    <use fill="#4CAF50" xlink:href="#b"/>
+    <path stroke-opacity=".15" stroke="#000" d="M8 15.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11z"/>
+    <circle fill-opacity=".2" fill="#000" cx="5" cy="10" r="2"/>
+    <circle fill-opacity=".2" fill="#000" cx="11" cy="10" r="2"/>
+    <circle fill-opacity=".2" fill="#000" cx="8" cy="7" r="2"/>
+    <circle fill-opacity=".2" fill="#000" cx="8" cy="13" r="2"/>
+    <path d="M5.5 2.5l-1-1m6 1l1-1" stroke="#000" stroke-linecap="round"/>
+    <path d="M8 4a6 6 0 1 1 0 12V4z" fill-opacity=".436" fill="#000"/>
+  </g>
+</svg>

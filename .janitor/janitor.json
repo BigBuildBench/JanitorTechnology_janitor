@@ -1,0 +1,40 @@
+{
+  "name": "Janitor",
+  "description": "The fastest development system in the world.",
+  "icon": "https://janitor.technology/img/janitor.svg",
+  "docker": {
+    "image": "janitortechnology/janitor"
+  },
+  "ports": {
+    "22": {
+      "label": "SSH",
+      "proxy": "none"
+    },
+    "8080": {
+      "label": "Preview",
+      "proxy": "https",
+      "preview": true
+    },
+    "8088": {
+      "label": "VNC",
+      "proxy": "https"
+    },
+    "8089": {
+      "label": "Cloud9",
+      "proxy": "https"
+    },
+    "8090": {
+      "label": "Theia",
+      "proxy": "https"
+    }
+  },
+  "scripts": {
+    "Start server": "node app",
+    "Live-reload server": "npm run watch",
+    "Check coding style": "npm run lint",
+    "Fix coding style": "npm run lint-fix",
+    "Run tests": "npm test",
+    "Update source code": "git pull --rebase origin master",
+    "Send to code review": "hub pull-request"
+  }
+}

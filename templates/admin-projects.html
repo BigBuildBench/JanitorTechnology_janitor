@@ -1,0 +1,82 @@
+    <section>
+      <div class="container">{{
+          for (let id in projects) {
+            let project = projects[id];
+        }}
+        <div class="panel panel-default panel-project">
+          <div class="panel-heading">
+            <img class="project-icon" src={{= project.icon in json}} alt="{{= project.name in xmlattr}} Logo">
+            <h4 class="project-title">{{= project.name in html}}</h4>
+            <div class="project-actions">
+              <button data-action="update" data-project={{= id in json}} class="btn btn-default">Update</button>
+              <form action="/api/projects/{{= id in xmlattr}}/pull" class="ajax-form has-feedback is-submit" method="post">
+                <button class="btn btn-primary" type="submit">Pull</button>
+              </form>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <form id="{{= id in xmlattr}}-host" data-action="projectdb" class="col-sm-4 ajax-form has-feedback has-select">
+                <input type="hidden" name="id" value={{= id in json}}>
+                <label class="control-label">Host</label>
+                <select class="form-control" data-submit-on="blur" name="/docker/host">{{
+                  for (let hostname in hosts) {
+                }}
+                  <option value={{= hostname in json}} {{if {{hostname === project.docker.host}} then selected}}>{{= hostname in html}}</option>{{
+                  }
+                }}
+                </select>
+              </form>
+              <form id="{{= id in xmlattr}}-image" data-action="projectdb" class="col-sm-4 ajax-form has-feedback">
+                <input type="hidden" name="id" value={{= id in json}}>
+                <label class="control-label">Image</label>
+                <input class="form-control" data-submit-on="blur" name="/docker/image" value={{= project.docker.image in json}}>
+              </form>
+              <form id="{{= id in xmlattr}}-path" data-action="projectdb" class="col-sm-4 ajax-form has-feedback">
+                <input type="hidden" name="id" value={{= id in json}}>
+                <label class="control-label">Path</label>
+                <input class="form-control" data-submit-on="blur" name="/docker/path" value={{= project.docker.path in json}}>
+              </form>
+            </div>
+            <form id="{{= id in xmlattr}}-description" data-action="projectdb" class="ajax-form has-feedback">
+              <input type="hidden" name="id" value={{= id in json}}>
+              <label class="control-label">Description</label>
+              <input class="form-control" data-submit-on="blur" name="/description" value={{= project.description in json}}>
+            </form>
+            <form id="{{= id in xmlattr}}-update" data-action="projectdb" class="ajax-form has-feedback">
+              <input type="hidden" name="id" value={{= id in json}}>
+              <label class="control-label">Update</label>
+              <textarea class="form-control" data-submit-on="blur" name="/docker/update" rows="5">{{= project.docker.update in html}}</textarea>
+            </form>
+            <label>Logs</label>
+            <pre class="well well-sm project-logs">{{= project.docker.logs in html}}</pre>
+          </div>
+        </div>{{
+          }
+        }}
+        <form id="newproject-form" class="ajax-form has-feedback panel panel-default panel-project">
+          <div class="panel-heading">
+            <h4 class="project-title">New Project</h4>
+            <div class="project-actions">
+              <input type="submit" class="btn btn-primary" value="Add">
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-4">
+                <label class="control-label">ID</label>
+                <input class="form-control" name="id" placeholder="Project ID">
+              </div>
+              <div class="col-sm-4">
+                <label class="control-label">Name</label>
+                <input class="form-control" name="/name" placeholder="Project Name">
+              </div>
+              <div class="col-sm-4">
+                <label class="control-label">Icon</label>
+                <input class="form-control" name="/icon" placeholder="Icon URI">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>

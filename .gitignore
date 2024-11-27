@@ -1,0 +1,17 @@
+.c9
+.DS_Store
+Thumbs.db
+npm-debug.log
+node_modules
+package-lock.json
+
+db.json
+docker.ca
+docker.crt
+docker.key
+janitor.log
+janitor.pid
+backups
+tokens
+tests/db.json
+tests/templates

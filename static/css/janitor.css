@@ -1,0 +1,632 @@
+/* Copyright © 2015 Team Janitor. All rights reserved.
+ * The following code is covered by the AGPL-3.0 license. */
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header, section, footer {
+  flex-shrink: 0;
+}
+
+section {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+section:last-of-type {
+  flex-grow: 1;
+}
+
+footer {
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h2 {
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 7px;
+  padding-bottom: 7px;
+}
+
+h2.header {
+  margin-bottom: 20px;
+}
+
+h4 {
+  color: #777;
+}
+
+.logo-small {
+  width: 30px;
+}
+
+.logo-medium {
+  width: 35px;
+}
+
+.logo-large {
+  width: 50px;
+}
+
+/* Responsive navigation bar */
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-inverse {
+  background-color: #333;
+}
+
+.navbar-header {
+  text-align: center;
+}
+
+.navbar-brand {
+  opacity: 0.7;
+  float: none;
+  display: inline-block;
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+  opacity: 1;
+}
+
+.navbar-brand > img {
+  width: 25px;
+  float: left;
+  margin-top: 3px;
+  margin-right: 5px;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+
+.navbar-brand > span, .jumbotron h1 {
+  color: white;
+  font-family: sans-serif;
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 11px 0 0 13px;
+  font-size: 20px;
+}
+
+.navbar-toggle:link, .navbar-toggle:visited, .navbar-toggle:active {
+  color: white;
+  opacity: 0.6;
+}
+
+.navbar-toggle:hover {
+  color: white;
+  opacity: 0.9;
+}
+
+.badge-red {
+  background-color: #D9534F;
+}
+
+/* Landing page */
+
+.jumbotron {
+  color: white;
+  background-color: #1265AA;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.signup {
+  color: white;
+  background-color: #094C83;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 0;
+}
+
+.signup > .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.signup-text {
+  margin-right: 50px;
+}
+
+.signup-text > h2, .signup-text h3 {
+  margin: 10px 0 0 0;
+}
+
+.janitor-story {
+  margin-top: 15px;
+}
+
+.janitor-story.disabled {
+  opacity: 0.5;
+}
+
+.janitor-story > h2 > .glyphicon-flash {
+  margin: 0 -5px;
+  font-size: 32px;
+  top: 3px;
+}
+
+.janitor-story > h2 > .glyphicon-check {
+  font-size: 28px;
+}
+
+.janitor-story > h2 > .glyphicon-cloud {
+  top: 7px;
+}
+
+/* Forms */
+
+#signup-form {
+  padding: 0;
+}
+
+#invite-form input[type='email'] {
+  border-top-left-radius: 0;
+}
+
+#invite-form input[type='submit'] {
+  border-top-right-radius: 0;
+}
+
+.account-form {
+  margin-bottom: 15px;
+}
+
+.ajax-form > .form-control-feedback {
+  background: none;
+  border: none;
+  outline: none;
+  pointer-events: none;
+  padding: 1px;
+  top: 5px;
+}
+
+.ajax-form > .form-control-feedback:invalid {
+  box-shadow: none;
+}
+
+.ajax-form.has-button > .form-control-feedback,
+.row > .ajax-form.has-button > .form-control-feedback {
+  right: 75px;
+}
+
+.ajax-form.panel-project > .form-control-feedback {
+  top: 10px;
+  right: 80px;
+}
+
+.ajax-form.has-submit > .form-control-feedback {
+  position: relative;
+  display: inline;
+  top: 0;
+  left: 5px;
+}
+
+.ajax-form.is-submit > .form-control-feedback {
+  top: 0;
+  left: -30px;
+}
+
+.ajax-form.is-submit-xs > .form-control-feedback {
+  top: -5px;
+  left: -30px;
+}
+
+#invite-form > .form-control-feedback {
+  top: 0;
+  right: 60px;
+}
+
+#login-form > .form-control-feedback {
+  top: 0;
+}
+
+.modal-form .form-control-feedback {
+  bottom: 1em;
+  left: 1em;
+  top: auto;
+}
+
+.row > .ajax-form > .form-control-feedback {
+  right: 15px;
+}
+
+.row > .ajax-form.has-select > .form-control-feedback {
+  right: 25px;
+}
+
+.ajax-form:not(.has-success) > .form-control-feedback > .glyphicon-ok,
+.ajax-form:not(.has-error) > .form-control-feedback > .glyphicon-remove {
+  visibility: hidden;
+}
+
+.ajax-form.has-error > .form-control-feedback > .glyphicon-ok,
+.ajax-form.has-success > .form-control-feedback > .glyphicon-remove {
+  display: none;
+}
+
+.login-with {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.login-with > a {
+  flex: 1;
+}
+
+.login-with > a:not(:last-child) {
+  margin-right: 10px;
+}
+
+.top-right-controls {
+  height: 0;
+}
+
+.top-right-controls > * {
+  float: right;
+  margin: -5px 0 0 10px;
+  position: relative;
+  z-index: 10;
+}
+
+.alert-warning a,
+.alert-warning a:focus,
+.alert-warning a:hover {
+  color: #c9302c;
+}
+
+.editable-label:not(.editing) .editable-editor,
+.editable-label.editing .editable-value {
+  display: none;
+}
+
+.editable-editor {
+  width: 100%;
+}
+
+.editable-toggle {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Lists */
+
+.list-group-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.list-group-item > :not(:last-child) {
+  margin-right: 15px;
+}
+
+.list-group-item-details {
+  line-height: 1.5em;
+  color: #555;
+}
+
+.list-group-item-controls {
+  margin-left: auto;
+}
+
+.list-group-item-stressed {
+  border-left: solid #E36200;
+}
+
+/* Panels */
+
+.panel-project {
+  margin-top: 25px;
+}
+
+.panel-project > .panel-heading {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.project-icon {
+  height: 35px;
+  width: 35px;
+}
+
+.project-icon.glyphicon {
+  top: 0;
+  color: #777;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.project-title {
+  flex-grow: 1;
+  margin: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.project-title .editable-label {
+  width: 100%;
+}
+
+.project-title .editable-value {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.project-title .editable-toggle {
+  color: #777;
+}
+
+.panel-project:not(:hover) .editable-toggle:not(:focus) {
+  visibility: hidden;
+}
+
+.project-title .editable-editor .form-control {
+  margin-bottom: 0;
+}
+
+.project-title h4 {
+  margin: 0;
+  hyphens: auto;
+}
+
+.project-title .form-control-feedback {
+  top: 0;
+}
+
+.project-status {
+  margin-left: 10px;
+}
+
+.project-actions {
+  flex-shrink: 0;
+}
+
+.panel-project > .panel-body {
+  padding: 10px;
+}
+
+.project-actions > .btn:not(:last-child),
+.project-actions > form:not(:last-child) {
+  margin-right: 5px;
+}
+
+.project-actions > form {
+  display: inline-block;
+}
+
+.panel-project .form-control {
+  margin-bottom: 15px;
+}
+
+.project-updated {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.project-timestamp {
+  border-bottom: 1px dotted lightgrey;
+}
+
+.project-logs {
+  max-height: 200px;
+}
+
+@media (max-width: 768px) {
+  .containers .panel-heading {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .containers .project-icon {
+    margin-right: 5px;
+  }
+  .containers .project-title {
+    order: 5;
+    margin: 10px 0 0;
+    width: 100%;
+  }
+}
+
+/* Blog */
+
+.blog {
+  color: #444;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 30px;
+}
+
+.blog > .container {
+  max-width: 700px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.blog-post {
+  margin-bottom: 45px;
+}
+
+.blog-post > h2.header {
+  margin-bottom: 35px;
+  margin-left: -2px;
+  margin-right: -2px;
+}
+
+*:not(:hover) > .show-on-hover {
+  visibility: hidden;
+}
+
+/* API reference */
+
+.reference h1:not(:first-of-type) {
+  margin-top: 55px;
+  margin-bottom: 10px;
+}
+
+.reference h2 {
+  border-bottom: 0;
+  font-size: 28px;
+  margin-top: 45px;
+  margin-bottom: 10px;
+}
+
+.reference h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Data */
+
+.data-topic {
+  padding: 20px;
+  padding-top: 15px;
+}
+
+.numbers > .number:not(:first-of-type) {
+  padding-left: 10px;
+}
+
+.number {
+  color: #0c9100;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.unit {
+  color: #777;
+  font-size: 11px;
+}
+
+.graph {
+  padding-top: 40px;
+  padding-right: 25px;
+}
+
+.graph > div[data-data] {
+  height: 300px;
+  width: 500px;
+  max-width: 100%;
+}
+
+.docker-tree pre {
+  line-height: 1.19; /* The Docker containers ASCII tree shows gaps > 1.20 */
+}
+
+.diff-added {
+  color: #28a745;
+}
+
+.diff-deleted {
+  color: #cb2431;
+}
+
+.diff-hidden {
+  color: #a3aab1;
+}
+
+/* Sections */
+
+section.alert {
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+}
+
+section.containers > .container,
+section.data > .container,
+section.login > .container,
+section.projects > .container,
+section.reference > .container,
+section.settings > .container,
+section.video > .container{
+  max-width: 850px;
+}
+
+section.video {
+  margin-top: 30px;
+}
+
+.tabs {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.nav-tabs > li > a {
+  padding-top: 11px;
+  padding-bottom: 9px;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  border-top: 3px solid #e36200;
+  font-weight: bold;
+  padding-top: 9px;
+}
+
+.row-header {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.protip {
+  color: #777;
+  text-align: center;
+  margin: 0;
+}
+
+/* Status icons */
+
+.status-icon {
+  border-radius: 100%;
+  border: 1px solid rgba(0,0,0,0.1);
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.status-icon.primary {
+  background: #0a84ff;
+}
+
+.status-icon.success {
+  background: #30e60b;
+}
+
+.status-icon.error {
+  background: #ff0039;
+}
+
+.status-icon.warning {
+  background: #ff9400;
+}
+
+/* Override bootstrap alert margin */
+.alert {
+  margin-bottom: 0;
+}
